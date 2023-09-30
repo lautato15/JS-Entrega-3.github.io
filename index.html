@@ -3,11 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- BOOSTRAP -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
       crossorigin="anonymous"
+    />
+    <!-- FontAwesome 6.4.2 -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="styles.css" />
     <title>Pokemon Play</title>
@@ -25,15 +34,27 @@
       >
     </div>
     <div class="container text-center">
-      <img src="./assets/img/pokemon.png" style="width: 200px" alt="" class="mb-3" />
-      <div id="pokedex" class="row justify-content-center text-center">
-        <div id="instructions" class="d-flex justify-content-center col-12 ">
-          <div class=" px-2 border border-black rounded-3 bg-success-subtle mb-2 title">
-            <h2 class="m-0"
-              >POKEDEX!
-              </h2
-            >
+      <img
+        src="./assets/img/pokemon.png"
+        style="width: 200px"
+        alt=""
+        class="mb-3"
+      />
+      <div id="pokedex" class="justify-content-center text-center">
+        <div id="instructions" class="d-flex justify-content-center col-12">
+          <div
+            class="px-2 border border-black rounded-3 bg-success-subtle mb-2 title"
+          >
+            <h2 class="m-0">POKEDEX!</h2>
             <p class="m-0">Select your Pokemon!</p>
+          </div>
+        </div>
+        <div id="pokeCards" class="row">
+          <div class="w-100 d-flex justify-content-center align-items-center">
+            <div class="spinner-border text-danger mt-5" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+            <p>Loading...</p>
           </div>
         </div>
       </div>
@@ -44,6 +65,8 @@
       integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
       crossorigin="anonymous"
     ></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
     <script type="module" src="./pokemons.js"></script>
     <script type="module" src="./scripts.js"></script>
   </body>

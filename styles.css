@@ -31,3 +31,14 @@
   font-family: "BITWONDER";
   src: url(./assets/fonts/8bit_wonder/8-BIT\ WONDER.TTF);
 }
+
+/* Type Class */
+.grass{
+  background-color: rgb(74, 154, 74);
+}
+.fire{
+  background-color: rgb(145, 58, 58);
+}
+.water{
+  background-color: rgb(56, 82, 143);
+}
