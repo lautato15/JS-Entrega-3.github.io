@@ -1,0 +1,33 @@
+.my-card {
+  border: 2px black solid;
+  max-width: 250px;
+  min-width: 200px;
+  transition: all 0.4s ease-in-out;
+}
+@media (max-width: 576px) {
+  .my-card{
+    transform: scale(0.7);
+  }
+}
+.imgMovie {
+  transition: all 0.4s ease-in-out;
+}
+.my-card:hover {
+  transform: scale(1.06, 1.06);
+  opacity: 1.1;
+  border: 1px solid wheat;
+  z-index: 4;
+  border: 3px black solid;
+}
+.showPokemon {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+.title{
+  font-family: "BITWONDER"
+}
+@font-face {
+  font-family: "BITWONDER";
+  src: url(./assets/fonts/8bit_wonder/8-BIT\ WONDER.TTF);
+}
