@@ -116,6 +116,5 @@ function selectPokemon(id) {
   sessionStorage.setItem("pokemon", JSON.stringify(pokemons[id - 1]));
   body.classList.add("showPokemon");
   formFlexSwitch.classList.add("d-none");
-  console.log("Seleccionaste el Personaje:" + pokemons[id - 1].name);
   window.location.href = "/pokedex.html";
 }
