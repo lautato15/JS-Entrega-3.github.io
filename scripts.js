@@ -108,7 +108,7 @@ const getPokemons = async (max) => {
     ul.appendChild(li);
   }
 };
-getPokemons(100);
+getPokemons(50);
 
 function selectPokemon(id) {
   // LOCAL STORAGE  Y JSON ♦
