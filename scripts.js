@@ -76,6 +76,7 @@ const getPokemons = async (max) => {
     const type = card.querySelector("p");
     type.textContent = pokemon.type.toLocaleUpperCase();
 
+    // EVENTOS ♦
     document
       .querySelector(`#card${pokemon.id}`)
       .addEventListener("click", function () {
@@ -109,12 +110,10 @@ const getPokemons = async (max) => {
 };
 getPokemons(100);
 
-// EVENTOS ♦
-// Seleccionador
 function selectPokemon(id) {
   // LOCAL STORAGE  Y JSON ♦
+  // Guardamos nuestro preciado Pokemon en su Pokeball (Storage)
   sessionStorage.setItem("pokemon", JSON.stringify(pokemons[id - 1]));
-
   body.classList.add("showPokemon");
   formFlexSwitch.classList.add("d-none");
   console.log("Seleccionaste el Personaje:" + pokemons[id - 1].name);

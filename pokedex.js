@@ -1,6 +1,6 @@
 // JSON y STORAGE ♦
 const pokemon = JSON.parse(sessionStorage.getItem("pokemon"));
-console.log(pokemon);
+
 // OPERADORES LÓGICOS AVANZADOS (AND) ♦
 !pokemon && (window.location.href = "/notfound.html");
 
