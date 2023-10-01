@@ -24,6 +24,10 @@
   display: flex;
   align-items: center;
 }
+.deshabilitado {
+  pointer-events: none;
+  opacity: 0.6; /* Opcional: reduce la opacidad para indicar deshabilitación visualmente */
+}
 .title{
   font-family: "BITWONDER"
 }
@@ -31,7 +35,10 @@
   font-family: "BITWONDER";
   src: url(./assets/fonts/8bit_wonder/8-BIT\ WONDER.TTF);
 }
-
+/* BG Load */
+.load-bg{
+  background-color: #78C9B3;
+}
 /* Type Class */
 .grass{
   background-color: rgb(74, 154, 74);
@@ -41,4 +48,31 @@
 }
 .water{
   background-color: rgb(56, 82, 143);
+}
+.electric{
+  background-color: yellow;
+}
+.bug{
+  background-color: #2f8e75;
+}
+.normal{
+  background-color: rgb(116, 113, 113);
+}
+.poison{
+  background-color: rgb(121, 20, 121);
+}
+.fighting{
+  background-color: antiquewhite;
+}
+.ground{
+  background-color: rgb(129, 99, 55);
+}
+.psychic{
+  background-color: rgb(255, 204, 141);
+}
+.rock{
+  background-color: rgb(104, 91, 74);
+}
+.ghost{
+  background-color: rgb(197, 170, 197);
 }

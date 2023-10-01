@@ -82,17 +82,41 @@ const getPokemons = async (max) => {
         selectPokemon(pokemon.id);
       });
   }
+  // MANIPULACION DE ARRAY (REDUCE) ♦
+  // Haremos un nuevo array con Reduce que obtenga la cantidad de Pokemons que hay por tipo de pokemon
+  const countTypes = pokemons.reduce((acumulador, pokemon) => {
+    if (!acumulador[pokemon.type]) {
+      acumulador[pokemon.type] = 1;
+    } else {
+      acumulador[pokemon.type]++;
+    }
+    return acumulador;
+  }, {});
+  const dropdown = document.querySelector("#btnDropdown");
+  dropdown.removeAttribute("disabled");
+  for (const clave in countTypes) {
+    const ul = document.getElementById(`reduceUl`);
+    const li = document.createElement("li");
+    li.id = clave;
+    li.classList.add("dropdown-item", "d-flex", "fw-bold");
+    li.textContent = clave.toUpperCase();
+    const span = document.createElement("span");
+    span.textContent = countTypes[clave];
+    span.classList.add("ms-auto", "badge", "bg-danger", "rounded-pill");
+    li.appendChild(span);
+    ul.appendChild(li);
+  }
 };
-getPokemons(300);
+getPokemons(100);
 
 // EVENTOS ♦
 // Seleccionador
 function selectPokemon(id) {
   // LOCAL STORAGE  Y JSON ♦
-  localStorage.setItem("pokemon", JSON.stringify(pokemons[id]));
+  sessionStorage.setItem("pokemon", JSON.stringify(pokemons[id - 1]));
 
   body.classList.add("showPokemon");
   formFlexSwitch.classList.add("d-none");
-  console.log("Seleccionaste el Personaje:" + pokemons[id].name);
+  console.log("Seleccionaste el Personaje:" + pokemons[id - 1].name);
   window.location.href = "/pokedex.html";
 }

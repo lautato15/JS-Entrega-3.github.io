@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="styles.css" />
     <title>Pokemon Play</title>
   </head>
-  <body id="body" class="bg-primary-subtle">
+  <body id="body" class="load-bg">
     <div id="formFlexSwitch" class="form-check form-switch m-1 mt-0">
       <input
         class="form-check-input"
@@ -34,27 +34,41 @@
       >
     </div>
     <div class="container text-center">
-      <img
-        src="./assets/img/pokemon.png"
-        style="width: 200px"
-        alt=""
-        class="mb-3"
-      />
+      <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+          <img
+            src="./assets/img/pokemon.png"
+            style="width: 200px"
+            alt=""
+            class="mb-3"
+          />
+        </div>
+        <div class="col-4">
+          <div class="dropdown text-end">
+            <button disabled id="btnDropdown" class="btn btn-secondary dropdown-toggle ms-auto" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Types of Pokemons
+            </button>
+            <ul id="reduceUl" class="dropdown-menu bg-danger-subtle">
+              <!-- Contenido de mi Reduce -->
+            </ul>
+          </div>
+        </div>
+      </div>
       <div id="pokedex" class="justify-content-center text-center">
         <div id="instructions" class="d-flex justify-content-center col-12">
           <div
             class="px-2 border border-black rounded-3 bg-success-subtle mb-2 title"
           >
-            <h2 class="m-0">POKEDEX!</h2>
-            <p class="m-0">Select your Pokemon!</p>
+            <h2 class="m-0">POKEDEX</h2>
+            <p class="m-0">Select your Pokemon</p>
           </div>
         </div>
         <div id="pokeCards" class="row">
-          <div class="w-100 d-flex justify-content-center align-items-center">
-            <div class="spinner-border text-danger mt-5" role="status">
-              <span class="visually-hidden">Loading...</span>
-            </div>
-            <p>Loading...</p>
+          
+          <div class="w-100 d-flex justify-content-center align-items-center flex-column position-relative">
+            <img src="./assets/img/pokeball.gif" alt="Cargando Pokemons desde la Pokeball" style="width: 200px;" class="mt-4">
+            <p class="position-absolute fw-bold" style="bottom: 0px;">Loading...</p>
           </div>
         </div>
       </div>
