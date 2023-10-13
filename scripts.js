@@ -27,6 +27,7 @@ const getPokemons = async (max) => {
       method: "GET",
       url: `https://pokeapi.co/api/v2/pokemon/${i}`,
     });
+    // Con respecto a las llamadas, realmente busque pero no encontre la forma de hacer que en una llamada me traiga los datos de muchos pokemons. La unica forma que vi es pegandole a la URL https://pokeapi.co/api/v2/pokemon/ pero esto me devuelve un JSON con un objeto por cada Pokemon pero que adentro solo tiene dos atributos que son el nombre y la URL especifica de cada pokemon, por lo cual tengo que volver a hacer otra llamada para traer los datos del mismo, entonces elegi ir por este otro metodo con un for y que el usuario pueda elegir incluso cuantos pokemons llamar.
     response.data.type = response.data.types[0].type.name;
     pokemons.push(response.data);
   }
