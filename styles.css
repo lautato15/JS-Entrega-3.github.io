@@ -31,6 +31,15 @@
 .title{
   font-family: "BITWONDER"
 }
+.instructions{
+  font-family: "BITWONDER";
+  font-size: 0.8rem;
+  border: solid black 3px;
+  border-radius: 15px;
+  margin-top: 1rem;
+  background-color: #78ca72;
+  padding: 8px;
+}
 @font-face {
   font-family: "BITWONDER";
   src: url(./assets/fonts/8bit_wonder/8-BIT\ WONDER.TTF);
@@ -76,3 +85,5 @@
 .ghost{
   background-color: rgb(197, 170, 197);
 }
+
+

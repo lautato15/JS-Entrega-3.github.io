@@ -1,33 +1,28 @@
 const pokemons = [];
 let interfaceClear = true;
 const body = document.getElementById("body");
-const labelFlexSwitch = document.getElementById("labelFlexSwitch");
-const formFlexSwitch = document.getElementById("formFlexSwitch");
+const counter = document.querySelector("#counter");
+const label = document.querySelector("#instructions1");
+const pokeball = document.querySelector("#pokeball-img");
+const ploading = document.querySelector("#p-loading");
 const row = document.getElementById("pokeCards");
-function switchInterface(interfaceClear) {
-  if (!interfaceClear) {
-    body.classList.remove("bg-primary-subtle");
-    body.classList.add("bg-dark");
-    labelFlexSwitch.textContent = "Active Clear Mode";
-    labelFlexSwitch.classList.add("text-white");
-    labelFlexSwitch.classList.remove("text-dark");
-  } else {
-    body.classList.remove("bg-dark");
-    body.classList.add("bg-primary-subtle");
-    labelFlexSwitch.textContent = "Active Dark Mode";
-    labelFlexSwitch.classList.add("text-dark");
-    labelFlexSwitch.classList.remove("text-white");
-  }
-}
-document.querySelector(`#flexSwitch`).addEventListener("click", function () {
-  if (interfaceClear) interfaceClear = false;
-  else interfaceClear = true;
-  switchInterface(interfaceClear);
-});
+const btnCounter = document.querySelector("#btnCounter");
 
+document.querySelector(`#btnCounter`).addEventListener("click", function () {
+  if (Number(counter.value) > 0 && Number(counter.value) < 1018) {
+    ploading.textContent = "Cargando ...";
+    pokeball.setAttribute("src", "./assets/img/pokeball.gif");
+    pokeball.classList.add("mt-5", "pt-2");
+    label.classList.add("d-none");
+    getPokemons(Number(counter.value));
+  } else {
+    label.textContent =
+      "Numero incorrecto, debes ingresar un numero entre el 1 y el 1017";
+  }
+});
 // LLAMADA HTTP CON AXIOS ♦
 const getPokemons = async (max) => {
-  for (let i = 1; i < max; i++) {
+  for (let i = 1; i < max + 1; i++) {
     const response = await axios({
       method: "GET",
       url: `https://pokeapi.co/api/v2/pokemon/${i}`,
@@ -35,6 +30,8 @@ const getPokemons = async (max) => {
     response.data.type = response.data.types[0].type.name;
     pokemons.push(response.data);
   }
+  counter.classList.add("d-none");
+  btnCounter.classList.add("d-none");
   // MANIPULACION DEL DOM ♦
   // Cargado de Datos
   // Crear el Layout y las Cards
@@ -108,7 +105,7 @@ const getPokemons = async (max) => {
     ul.appendChild(li);
   }
 };
-getPokemons(50);
+
 
 function selectPokemon(id) {
   // LOCAL STORAGE  Y JSON ♦

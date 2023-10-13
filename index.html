@@ -23,20 +23,18 @@
     <title>Pokemon Play</title>
   </head>
   <body id="body" class="load-bg">
-    <div id="formFlexSwitch" class="form-check form-switch m-1 mt-0">
-      <input
-        class="form-check-input"
-        type="checkbox"
-        role="switch"
-        id="flexSwitch"
-      />
-      <label id="labelFlexSwitch" class="form-check-label" for="flexSwitch"
-        >Active Dark Mode</label
-      >
-    </div>
-    <div class="container text-center">
+    
+    <div class="container text-center mt-5">
       <div class="row">
-        <div class="col-4"></div>
+        <div class="col-4">
+          <form class="d-flex justify-content-center align-items-center  flex-column">
+            <div class="d-flex h-100 me-4 justify-content-center align-items-center">
+              <input id="counter" name="counter" type="number" class="form-control me-2" style="width: 5rem;" >
+              <button id="btnCounter" class="btn btn-success" type="button">Click</button>
+            </div>
+            <label id="instructions1" class="instructions w-75 text-start"   for="counter"> Ingresa cuantos Pokemons quieres invocar y dale click al Boton. Recuerda que cuantos mas invoques mas puede demorar en cargar... </label>
+          </form>
+        </div>
         <div class="col-4">
           <img
             src="./assets/img/pokemon.png"
@@ -44,11 +42,17 @@
             alt=""
             class="mb-3"
           />
+          <div
+          class="px-2 border border-black rounded-3 bg-success-subtle mb-5 title"
+        >
+          <h2 class="m-0 p-2">POKEDEX</h2>
+          <!-- <p class="m-0">Select your Pokemon</p> -->
+        </div>
         </div>
         <div class="col-4">
           <div class="dropdown text-end">
             <button disabled id="btnDropdown" class="btn btn-secondary dropdown-toggle ms-auto" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Types of Pokemons
+              Tipos de Pokemons
             </button>
             <ul id="reduceUl" class="dropdown-menu bg-danger-subtle">
               <!-- Contenido de mi Reduce -->
@@ -57,19 +61,14 @@
         </div>
       </div>
       <div id="pokedex" class="justify-content-center text-center">
-        <div id="instructions" class="d-flex justify-content-center col-12">
-          <div
-            class="px-2 border border-black rounded-3 bg-success-subtle mb-5 title"
-          >
-            <h2 class="m-0">POKEDEX</h2>
-            <p class="m-0">Select your Pokemon</p>
-          </div>
+        <div  class="d-flex justify-content-center col-12">
+        
         </div>
         <div id="pokeCards" class="row">
           
           <div class="w-100 d-flex justify-content-center align-items-center flex-column position-relative">
-            <img src="./assets/img/pokeball.gif" alt="Cargando Pokemons desde la Pokeball" style="width: 200px;" class="mt-4">
-            <p class="position-absolute fw-bold" style="bottom: 0px;">Loading...</p>
+            <img src="./assets/img/pokeballStatic.png" id="pokeball-img" alt="Cargando Pokemons desde la Pokeball" style="width: 200px;" >
+            <p  id="p-loading" class="position-absolute fw-bold" style="bottom: 0px;"></p>
           </div>
         </div>
       </div>
